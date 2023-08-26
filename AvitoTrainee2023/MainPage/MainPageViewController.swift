@@ -7,23 +7,59 @@
 
 import UIKit
 
-class MainPageViewController: UIViewController {
+final class MainPageViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	private lazy var collectionView = makeCollectionView()
 
-        // Do any additional setup after loading the view.
-    }
-    
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-    /*
-    // MARK: - Navigation
+		setup()
+	}
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+extension MainPageViewController: UICollectionViewDataSource {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		100
+	}
+
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		return collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageCell", for: indexPath)
+	}
+
 
 }
+
+extension MainPageViewController: UICollectionViewDelegate {
+
+}
+
+private extension MainPageViewController {
+	func setup() {
+		view.addSubview(collectionView)
+		collectionView.frame = view.bounds
+
+		navigationItem.title = "Avito"
+		navigationController?.navigationBar.barTintColor = .gray
+		navigationController?.navigationBar.prefersLargeTitles = true
+
+		setupCollectionView()
+	}
+
+	func makeCollectionView() -> UICollectionView {
+		let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+
+		collection.backgroundColor = .lightGray
+
+		collection.dataSource = self
+		collection.delegate = self
+
+		return collection
+
+	}
+
+	func setupCollectionView() {
+		collectionView.register(MainPageCell.self, forCellWithReuseIdentifier: "MainPageCell")
+	}
+}
+

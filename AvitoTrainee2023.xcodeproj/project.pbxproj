@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		60A900012A9A08220042944B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900002A9A08220042944B /* AppDelegate.swift */; };
 		60A900032A9A08220042944B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900022A9A08220042944B /* SceneDelegate.swift */; };
-		60A900082A9A08220042944B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A900062A9A08220042944B /* Main.storyboard */; };
 		60A9000A2A9A08230042944B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A900092A9A08230042944B /* Assets.xcassets */; };
 		60A9000D2A9A08230042944B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A9000B2A9A08230042944B /* LaunchScreen.storyboard */; };
 		60A900162A9A08D70042944B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900152A9A08D70042944B /* MainPageViewController.swift */; };
+		60A900182A9A1A0D0042944B /* MainPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900172A9A1A0D0042944B /* MainPageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		60A900002A9A08220042944B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A900022A9A08220042944B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60A900072A9A08220042944B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60A900092A9A08230042944B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60A9000C2A9A08230042944B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60A9000E2A9A08230042944B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60A900152A9A08D70042944B /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		60A900172A9A1A0D0042944B /* MainPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCell.swift; sourceTree = "<group>"; };
 		60A9FFFD2A9A08220042944B /* AvitoTrainee2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTrainee2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				60A900152A9A08D70042944B /* MainPageViewController.swift */,
+				60A900172A9A1A0D0042944B /* MainPageCell.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -67,7 +68,6 @@
 				60A900002A9A08220042944B /* AppDelegate.swift */,
 				60A900022A9A08220042944B /* SceneDelegate.swift */,
 				60A900142A9A08970042944B /* MainPage */,
-				60A900062A9A08220042944B /* Main.storyboard */,
 				60A900092A9A08230042944B /* Assets.xcassets */,
 				60A9000B2A9A08230042944B /* LaunchScreen.storyboard */,
 				60A9000E2A9A08230042944B /* Info.plist */,
@@ -135,7 +135,6 @@
 			files = (
 				60A9000D2A9A08230042944B /* LaunchScreen.storyboard in Resources */,
 				60A9000A2A9A08230042944B /* Assets.xcassets in Resources */,
-				60A900082A9A08220042944B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,20 +148,13 @@
 				60A900012A9A08220042944B /* AppDelegate.swift in Sources */,
 				60A900162A9A08D70042944B /* MainPageViewController.swift in Sources */,
 				60A900032A9A08220042944B /* SceneDelegate.swift in Sources */,
+				60A900182A9A1A0D0042944B /* MainPageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		60A900062A9A08220042944B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60A900072A9A08220042944B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		60A9000B2A9A08230042944B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,7 +292,7 @@
 				INFOPLIST_FILE = AvitoTrainee2023/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -328,7 +320,7 @@
 				INFOPLIST_FILE = AvitoTrainee2023/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
