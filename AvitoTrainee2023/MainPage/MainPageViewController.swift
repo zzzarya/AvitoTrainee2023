@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol IMainPageViewController {
+	func render(viewModel: MainPageModels.ViewModel)
+}
+
 final class MainPageViewController: UIViewController {
 
 	private lazy var collectionView = makeCollectionView()
@@ -20,32 +24,68 @@ final class MainPageViewController: UIViewController {
 
 extension MainPageViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		100
+		10
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		return collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageCell", for: indexPath)
+		let model = MainPageCell.MainPageCellModel(
+			productImage: UIImage(systemName: "backpack.circle")!,
+			productName: "123",
+			productPrice: "123",
+			productLocation: "123",
+			productCreatedDate: "123")
+
+		return collectionView.dequeueReusableCell(withModel: model, for: indexPath)
 	}
-
-
 }
 
 extension MainPageViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		collectionView.deselectItem(at: indexPath, animated: true)
+	}
+}
+
+extension MainPageViewController: UICollectionViewDelegateFlowLayout {
+	func collectionView(
+		_ collectionView: UICollectionView,
+		layout collectionViewLayout: UICollectionViewLayout,
+		sizeForItemAt indexPath: IndexPath
+	) -> CGSize {
+		let itemsPerRow : CGFloat = 2
+		let paddingWidth = 20 * (itemsPerRow + 1)
+		let availabelWidth = collectionView.frame.width - paddingWidth
+		let withPerItem = availabelWidth / itemsPerRow
+		let heightPerItem = withPerItem * 1.6
+		return CGSize(width: withPerItem, height: heightPerItem)
+	}
+
+	func collectionView(
+		_ collectionView: UICollectionView,
+		layout collectionViewLayout: UICollectionViewLayout,
+		insetForSectionAt section: Int
+	) -> UIEdgeInsets {
+		UIEdgeInsets(top: 5, left: 20, bottom: 20, right: 20)
+	}
+
+	func collectionView(
+		_ collectionView: UICollectionView,
+		layout collectionViewLayout: UICollectionViewLayout,
+		minimumLineSpacingForSectionAt section: Int
+	) -> CGFloat {
+		30
+	}
+
+	func collectionView(
+		_ collectionView: UICollectionView,
+		layout collectionViewLayout: UICollectionViewLayout,
+		minimumInteritemSpacingForSectionAt section: Int
+	) -> CGFloat {
+		20
+	}
 
 }
 
 private extension MainPageViewController {
-	func setup() {
-		view.addSubview(collectionView)
-		collectionView.frame = view.bounds
-
-		navigationItem.title = "Avito"
-		navigationController?.navigationBar.barTintColor = .gray
-		navigationController?.navigationBar.prefersLargeTitles = true
-
-		setupCollectionView()
-	}
-
 	func makeCollectionView() -> UICollectionView {
 		let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
@@ -56,6 +96,17 @@ private extension MainPageViewController {
 
 		return collection
 
+	}
+
+	func setup() {
+		view.addSubview(collectionView)
+		collectionView.frame = view.bounds
+
+		navigationItem.title = "Avito"
+		navigationController?.navigationBar.barTintColor = .gray
+		navigationController?.navigationBar.prefersLargeTitles = true
+
+		setupCollectionView()
 	}
 
 	func setupCollectionView() {
