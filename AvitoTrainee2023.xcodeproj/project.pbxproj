@@ -18,9 +18,9 @@
 		60A900202A9A6F8E0042944B /* MainPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9001F2A9A6F8E0042944B /* MainPageInteractor.swift */; };
 		60A900222A9A6FA00042944B /* MainPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900212A9A6FA00042944B /* MainPagePresenter.swift */; };
 		60A900252A9A711E0042944B /* MainPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900242A9A711E0042944B /* MainPageModels.swift */; };
-		60A900272A9A75E00042944B /* MainPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900262A9A75E00042944B /* MainPageWorker.swift */; };
 		60A9002A2A9A76DD0042944B /* Avito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900292A9A76DD0042944B /* Avito.swift */; };
 		60A9002D2A9A7C720042944B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9002C2A9A7C720042944B /* NetworkManager.swift */; };
+		60A9002F2A9B60350042944B /* MainPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9002E2A9B60350042944B /* MainPageAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +36,9 @@
 		60A9001F2A9A6F8E0042944B /* MainPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageInteractor.swift; sourceTree = "<group>"; };
 		60A900212A9A6FA00042944B /* MainPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePresenter.swift; sourceTree = "<group>"; };
 		60A900242A9A711E0042944B /* MainPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModels.swift; sourceTree = "<group>"; };
-		60A900262A9A75E00042944B /* MainPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageWorker.swift; sourceTree = "<group>"; };
 		60A900292A9A76DD0042944B /* Avito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avito.swift; sourceTree = "<group>"; };
 		60A9002C2A9A7C720042944B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		60A9002E2A9B60350042944B /* MainPageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageAssembly.swift; sourceTree = "<group>"; };
 		60A9FFFD2A9A08220042944B /* AvitoTrainee2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTrainee2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,7 +61,7 @@
 				60A900152A9A08D70042944B /* MainPageViewController.swift */,
 				60A9001F2A9A6F8E0042944B /* MainPageInteractor.swift */,
 				60A900212A9A6FA00042944B /* MainPagePresenter.swift */,
-				60A900262A9A75E00042944B /* MainPageWorker.swift */,
+				60A9002E2A9B60350042944B /* MainPageAssembly.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 				60A9001B2A9A66890042944B /* CellViewModel.swift in Sources */,
 				60A900202A9A6F8E0042944B /* MainPageInteractor.swift in Sources */,
 				60A900012A9A08220042944B /* AppDelegate.swift in Sources */,
+				60A9002F2A9B60350042944B /* MainPageAssembly.swift in Sources */,
 				60A9001E2A9A66CF0042944B /* UIColletionView+Extensions.swift in Sources */,
 				60A900222A9A6FA00042944B /* MainPagePresenter.swift in Sources */,
-				60A900272A9A75E00042944B /* MainPageWorker.swift in Sources */,
 				60A900162A9A08D70042944B /* MainPageViewController.swift in Sources */,
 				60A900252A9A711E0042944B /* MainPageModels.swift in Sources */,
 				60A900032A9A08220042944B /* SceneDelegate.swift in Sources */,

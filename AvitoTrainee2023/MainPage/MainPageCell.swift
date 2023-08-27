@@ -54,7 +54,7 @@ private extension MainPageCell {
 	func setupConstraints() {
 		let vStack = UIStackView()
 		vStack.axis = .vertical
-		vStack.spacing = 10
+		vStack.spacing = 5
 		[
 			productImage,
 			productName,
@@ -75,18 +75,20 @@ private extension MainPageCell {
 		let image = UIImageView()
 		image.contentMode = .center
 		image.backgroundColor = .brown
-		image.layer.cornerRadius = 15
-		image.frame.size = CGSize(width: 25, height: 15)
+		image.frame = CGRect(x: 0, y: 0, width: 145, height: 145)
+		image.contentMode = .scaleToFill
+
+		let maskLayer = CAShapeLayer()
+		maskLayer.path = UIBezierPath(roundedRect: image.bounds, cornerRadius: 15).cgPath
+		image.layer.mask = maskLayer
+
 
 		return image
 	}
 
 	func makeProductName() -> UILabel {
 		let label = UILabel()
-		label.font = .boldSystemFont(ofSize: 10)
-		label.numberOfLines = .zero
-		label.backgroundColor = .black
-		label.textColor = .white
+		label.font = .systemFont(ofSize: 12)
 
 		return label
 	}
@@ -95,28 +97,22 @@ private extension MainPageCell {
 		let label = UILabel()
 		label.font = .boldSystemFont(ofSize: 10)
 		label.numberOfLines = .zero
-		label.backgroundColor = .black
-		label.textColor = .white
 
 		return label
 	}
 
 	func makeProductLocation() -> UILabel {
 		let label = UILabel()
-		label.font = .boldSystemFont(ofSize: 10)
+		label.font = .systemFont(ofSize: 7)
 		label.numberOfLines = .zero
-		label.backgroundColor = .black
-		label.textColor = .white
 
 		return label
 	}
 
 	func makeproductCreatedDate() -> UILabel {
 		let label = UILabel()
-		label.font = .boldSystemFont(ofSize: 10)
+		label.font = .systemFont(ofSize: 7)
 		label.numberOfLines = .zero
-		label.backgroundColor = .black
-		label.textColor = .white
 
 		return label
 	}

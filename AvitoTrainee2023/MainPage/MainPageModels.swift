@@ -13,23 +13,27 @@ enum MainPageModels {
 	}
 
 	struct Responce {
-		let id: String
-		let title: String
-		let price: String
-		let location: String
-		let imageURL: String
-		let createdDate: String
-
-		struct ResponceProducts {
-			let products: [Responce]
+		struct Product {
+			let id: String
+			let title: String
+			let price: String
+			let location: String
+			let imageURL: String
+			let createdDate: String
 		}
+
+			let products: [Product]
 	}
 
 	struct ViewModel {
-		let title: String
-		let price: String
-		let location: String
-		let image: UIImage
-		let createdDate: String
+		struct ViewModelProduct {
+			let title: String
+			let price: String
+			let location: String
+			var image: UIImage?
+			let createdDate: String
+		}
+
+		let viewModelProducts: [ViewModelProduct]
 	}
 }

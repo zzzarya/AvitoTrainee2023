@@ -19,7 +19,7 @@ enum NetworkError: Error {
 	case responseError
 }
 
-final class NetworkManager: IMainPageWorker {
+final class NetworkManager {
 	static let shared = NetworkManager()
 
 	private init() {}
@@ -53,5 +53,22 @@ final class NetworkManager: IMainPageWorker {
 				completion(.failure(.decodingError))
 			}
 		}.resume()
+	}
+
+	func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void ) {
+		guard let url = URL(string: url ?? "") else {
+			completion(.failure(.invalidURL))
+			return
+		}
+
+		DispatchQueue.global().async {
+			guard let imageData = try? Data(contentsOf: url) else {
+				completion(.failure(.noData))
+				return
+			}
+			DispatchQueue.main.async {
+				completion(.success(imageData))
+			}
+		}
 	}
 }

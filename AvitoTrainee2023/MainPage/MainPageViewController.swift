@@ -7,33 +7,47 @@
 
 import UIKit
 
-protocol IMainPageViewController {
+protocol IMainPageViewController: AnyObject {
 	func render(viewModel: MainPageModels.ViewModel)
 }
 
 final class MainPageViewController: UIViewController {
-
+	var interactor: IMainPageInteractor?
+	
+	private var viewData: MainPageModels.ViewModel = .init(viewModelProducts: [])
 	private lazy var collectionView = makeCollectionView()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		setup()
+		interactor?.viewIsReady()
+	}
+}
+
+extension MainPageViewController: IMainPageViewController {
+	func render(viewModel: MainPageModels.ViewModel) {
+		self.viewData = viewModel
+		DispatchQueue.main.async {
+			self.collectionView.reloadData()
+		}
 	}
 }
 
 extension MainPageViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		10
+		viewData.viewModelProducts.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let product = viewData.viewModelProducts[indexPath.row]
+
 		let model = MainPageCell.MainPageCellModel(
-			productImage: UIImage(systemName: "backpack.circle")!,
-			productName: "123",
-			productPrice: "123",
-			productLocation: "123",
-			productCreatedDate: "123")
+			productImage: product.image ?? UIImage(),
+			productName: product.title,
+			productPrice: product.price,
+			productLocation: product.location,
+			productCreatedDate: product.createdDate)
 
 		return collectionView.dequeueReusableCell(withModel: model, for: indexPath)
 	}
@@ -55,7 +69,7 @@ extension MainPageViewController: UICollectionViewDelegateFlowLayout {
 		let paddingWidth = 20 * (itemsPerRow + 1)
 		let availabelWidth = collectionView.frame.width - paddingWidth
 		let withPerItem = availabelWidth / itemsPerRow
-		let heightPerItem = withPerItem * 1.6
+		let heightPerItem = withPerItem * 1.27
 		return CGSize(width: withPerItem, height: heightPerItem)
 	}
 
@@ -64,7 +78,7 @@ extension MainPageViewController: UICollectionViewDelegateFlowLayout {
 		layout collectionViewLayout: UICollectionViewLayout,
 		insetForSectionAt section: Int
 	) -> UIEdgeInsets {
-		UIEdgeInsets(top: 5, left: 20, bottom: 20, right: 20)
+		UIEdgeInsets(top: 5, left: 30, bottom: 20, right: 10)
 	}
 
 	func collectionView(
