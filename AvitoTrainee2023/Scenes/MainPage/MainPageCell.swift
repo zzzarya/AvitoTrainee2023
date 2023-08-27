@@ -8,8 +8,6 @@
 import UIKit
 
 final class MainPageCell: UICollectionViewCell {
-	static let identifier = "MainPageCell"
-
 	private lazy var productImage = makeProductImage()
 	private lazy var productName = makeProductName()
 	private lazy var productPrice = makeProductPrice()
@@ -18,7 +16,6 @@ final class MainPageCell: UICollectionViewCell {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		applyStyle()
 		setupConstraints()
 	}
 
@@ -46,11 +43,6 @@ extension MainPageCell.MainPageCellModel: CellViewModel {
 }
 
 private extension MainPageCell {
-	func applyStyle() {
-//		contentView.backgroundColor = .darkGray
-		contentView.layer.cornerRadius = 15
-	}
-
 	func setupConstraints() {
 		let vStack = UIStackView()
 		vStack.axis = .vertical
@@ -81,7 +73,6 @@ private extension MainPageCell {
 		let maskLayer = CAShapeLayer()
 		maskLayer.path = UIBezierPath(roundedRect: image.bounds, cornerRadius: 15).cgPath
 		image.layer.mask = maskLayer
-
 
 		return image
 	}

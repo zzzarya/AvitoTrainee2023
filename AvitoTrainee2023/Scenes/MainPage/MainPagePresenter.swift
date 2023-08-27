@@ -32,7 +32,10 @@ final class MainPagePresenter: IMainPagePresenter {
 		}
 	}
 
-	private func mapDataProduct(product: MainPageModels.Responce.Product, completion: @escaping (MainPageModels.ViewModel.ViewModelProduct) -> Void) {
+	private func mapDataProduct(
+		product: MainPageModels.Responce.Product,
+		completion: @escaping (MainPageModels.ViewModel.ViewModelProduct) -> Void
+	) {
 		var result = MainPageModels.ViewModel.ViewModelProduct(
 			title: product.title,
 			price: product.price,
@@ -53,7 +56,7 @@ final class MainPagePresenter: IMainPagePresenter {
 		}
 	}
 
-	func fetchProductImage(url: String, completion: @escaping (UIImage?) -> Void) {
+	private func fetchProductImage(url: String, completion: @escaping (UIImage?) -> Void) {
 		NetworkManager.shared.fetchImage(from: url) { imageData in
 			switch imageData {
 			case .success(let imageData):

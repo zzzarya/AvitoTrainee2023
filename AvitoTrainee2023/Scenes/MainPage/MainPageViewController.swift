@@ -96,7 +96,6 @@ extension MainPageViewController: UICollectionViewDelegateFlowLayout {
 	) -> CGFloat {
 		20
 	}
-
 }
 
 private extension MainPageViewController {

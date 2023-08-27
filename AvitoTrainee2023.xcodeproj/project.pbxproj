@@ -21,6 +21,12 @@
 		60A9002A2A9A76DD0042944B /* Avito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900292A9A76DD0042944B /* Avito.swift */; };
 		60A9002D2A9A7C720042944B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9002C2A9A7C720042944B /* NetworkManager.swift */; };
 		60A9002F2A9B60350042944B /* MainPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9002E2A9B60350042944B /* MainPageAssembly.swift */; };
+		60A9003C2A9BD4DE0042944B /* DetailsPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900372A9BD4DE0042944B /* DetailsPagePresenter.swift */; };
+		60A9003D2A9BD4DE0042944B /* DetailsPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900382A9BD4DE0042944B /* DetailsPageWorker.swift */; };
+		60A9003E2A9BD4DE0042944B /* DetailsPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900392A9BD4DE0042944B /* DetailsPageRouter.swift */; };
+		60A9003F2A9BD4DE0042944B /* DetailsPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9003A2A9BD4DE0042944B /* DetailsPageModels.swift */; };
+		60A900402A9BD4DE0042944B /* DetailsPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9003B2A9BD4DE0042944B /* DetailsPageInteractor.swift */; };
+		60A900422A9BD5210042944B /* DetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900412A9BD5210042944B /* DetailsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,12 @@
 		60A900292A9A76DD0042944B /* Avito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avito.swift; sourceTree = "<group>"; };
 		60A9002C2A9A7C720042944B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		60A9002E2A9B60350042944B /* MainPageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageAssembly.swift; sourceTree = "<group>"; };
+		60A900372A9BD4DE0042944B /* DetailsPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPagePresenter.swift; sourceTree = "<group>"; };
+		60A900382A9BD4DE0042944B /* DetailsPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageWorker.swift; sourceTree = "<group>"; };
+		60A900392A9BD4DE0042944B /* DetailsPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageRouter.swift; sourceTree = "<group>"; };
+		60A9003A2A9BD4DE0042944B /* DetailsPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageModels.swift; sourceTree = "<group>"; };
+		60A9003B2A9BD4DE0042944B /* DetailsPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageInteractor.swift; sourceTree = "<group>"; };
+		60A900412A9BD5210042944B /* DetailsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageViewController.swift; sourceTree = "<group>"; };
 		60A9FFFD2A9A08220042944B /* AvitoTrainee2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTrainee2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +110,37 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		60A900322A9BD1D90042944B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				60A900142A9A08970042944B /* MainPage */,
+				60A900332A9BD20C0042944B /*  DetailsPage */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		60A900332A9BD20C0042944B /*  DetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				60A900412A9BD5210042944B /* DetailsPageViewController.swift */,
+				60A9003B2A9BD4DE0042944B /* DetailsPageInteractor.swift */,
+				60A900372A9BD4DE0042944B /* DetailsPagePresenter.swift */,
+				60A900382A9BD4DE0042944B /* DetailsPageWorker.swift */,
+				60A900392A9BD4DE0042944B /* DetailsPageRouter.swift */,
+				60A9003A2A9BD4DE0042944B /* DetailsPageModels.swift */,
+			);
+			path = " DetailsPage";
+			sourceTree = "<group>";
+		};
+		60A900342A9BD2440042944B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				60A900002A9A08220042944B /* AppDelegate.swift */,
+				60A900022A9A08220042944B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		60A9FFF42A9A08220042944B = {
 			isa = PBXGroup;
 			children = (
@@ -117,13 +160,12 @@
 		60A9FFFF2A9A08220042944B /* AvitoTrainee2023 */ = {
 			isa = PBXGroup;
 			children = (
-				60A900002A9A08220042944B /* AppDelegate.swift */,
-				60A900022A9A08220042944B /* SceneDelegate.swift */,
-				60A9002B2A9A7C600042944B /* Services */,
-				60A900282A9A76B90042944B /* Models */,
+				60A900342A9BD2440042944B /* App */,
 				60A9001C2A9A66B70042944B /* Extensions */,
 				60A900192A9A66760042944B /* Protocols */,
-				60A900142A9A08970042944B /* MainPage */,
+				60A9002B2A9A7C600042944B /* Services */,
+				60A900282A9A76B90042944B /* Models */,
+				60A900322A9BD1D90042944B /* Scenes */,
 				60A900092A9A08230042944B /* Assets.xcassets */,
 				60A9000B2A9A08230042944B /* LaunchScreen.storyboard */,
 				60A9000E2A9A08230042944B /* Info.plist */,
@@ -204,14 +246,20 @@
 				60A9002D2A9A7C720042944B /* NetworkManager.swift in Sources */,
 				60A9001B2A9A66890042944B /* CellViewModel.swift in Sources */,
 				60A900202A9A6F8E0042944B /* MainPageInteractor.swift in Sources */,
+				60A9003D2A9BD4DE0042944B /* DetailsPageWorker.swift in Sources */,
 				60A900012A9A08220042944B /* AppDelegate.swift in Sources */,
 				60A9002F2A9B60350042944B /* MainPageAssembly.swift in Sources */,
+				60A9003E2A9BD4DE0042944B /* DetailsPageRouter.swift in Sources */,
 				60A9001E2A9A66CF0042944B /* UIColletionView+Extensions.swift in Sources */,
+				60A9003C2A9BD4DE0042944B /* DetailsPagePresenter.swift in Sources */,
 				60A900222A9A6FA00042944B /* MainPagePresenter.swift in Sources */,
+				60A900422A9BD5210042944B /* DetailsPageViewController.swift in Sources */,
+				60A900402A9BD4DE0042944B /* DetailsPageInteractor.swift in Sources */,
 				60A900162A9A08D70042944B /* MainPageViewController.swift in Sources */,
 				60A900252A9A711E0042944B /* MainPageModels.swift in Sources */,
 				60A900032A9A08220042944B /* SceneDelegate.swift in Sources */,
 				60A900182A9A1A0D0042944B /* MainPageCell.swift in Sources */,
+				60A9003F2A9BD4DE0042944B /* DetailsPageModels.swift in Sources */,
 				60A9002A2A9A76DD0042944B /* Avito.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
