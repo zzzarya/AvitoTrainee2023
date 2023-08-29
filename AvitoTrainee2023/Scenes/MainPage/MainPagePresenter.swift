@@ -37,6 +37,7 @@ final class MainPagePresenter: IMainPagePresenter {
 		completion: @escaping (MainPageModels.ViewModel.ViewModelProduct) -> Void
 	) {
 		var result = MainPageModels.ViewModel.ViewModelProduct(
+			id: product.id,
 			title: product.title,
 			price: product.price,
 			location: product.location,

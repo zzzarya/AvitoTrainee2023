@@ -6,30 +6,59 @@
 
 import UIKit
 
-protocol DetailsPageBusinessLogic
-{
-  func doSomething(request: DetailsPage.Something.Request)
+protocol IDetailsPageInteractor {
+	func viewIsReady()
+//	func fetchId()
 }
 
-protocol DetailsPageDataStore
-{
-  //var name: String { get set }
+protocol IDetailsPageStore: AnyObject {
+	var id: String { get set }
 }
 
-class DetailsPageInteractor: DetailsPageBusinessLogic, DetailsPageDataStore
-{
-  var presenter: DetailsPagePresentationLogic?
-  var worker: DetailsPageWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: DetailsPage.Something.Request)
-  {
-    worker = DetailsPageWorker()
-    worker?.doSomeWork()
-    
-    let response = DetailsPage.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+final class DetailsPageInteractor: IDetailsPageInteractor, IDetailsPageStore {
+	var id: String = ""
+	private let presenter: IDetailsPagePresenter
+
+	init(presenter: IDetailsPagePresenter) {
+		self.presenter = presenter
+	}
+
+	func viewIsReady() {
+		createResponce { responce in
+			self.presenter.present(responce: responce)
+		}
+	}
+
+	private func createResponce(completion: @escaping (DetailsPageModels.Responce) -> Void) {
+		let detailUrl = URLs.detailUrl.rawValue + id + ".json"
+
+		NetworkManager.shared.fetch(dataType: ProductDetails.self, from: detailUrl) { result in
+			switch result {
+			case .success(let product):
+				completion(DetailsPageModels.Responce(product: self.mapDrpoductData(product: product)))
+			case .failure(let error):
+				print(error)
+			}
+		}
+	}
+
+	private func mapDrpoductData(product: ProductDetails) -> DetailsPageModels.Responce.Product {
+		let result = DetailsPageModels.Responce.Product(
+			title: product.title,
+			price: product.price,
+			location: product.location,
+			imageUrl: product.imageUrl,
+			createdDate: product.createdDate,
+			description: product.description,
+			email: product.email,
+			phoneNumber: product.phoneNumber,
+			address: product.address
+		)
+
+		return result
+	}
+
+//	func fetchId() {
+//		print("id: \(id)")
+//	}
 }

@@ -13,6 +13,7 @@ protocol IMainPageViewController: AnyObject {
 
 final class MainPageViewController: UIViewController {
 	var interactor: IMainPageInteractor?
+	var router: IMainPageRouter?
 	
 	private var viewData: MainPageModels.ViewModel = .init(viewModelProducts: [])
 	private lazy var collectionView = makeCollectionView()
@@ -56,6 +57,9 @@ extension MainPageViewController: UICollectionViewDataSource {
 extension MainPageViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		collectionView.deselectItem(at: indexPath, animated: true)
+		
+		let product = viewData.viewModelProducts[indexPath.row]
+		router?.navigateToDetails(id: product.id)
 	}
 }
 

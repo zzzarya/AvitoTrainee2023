@@ -6,20 +6,35 @@
 
 import UIKit
 
-enum DetailsPage
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
+enum DetailsPageModels {
+	struct Responce {
+		struct Product {
+			let title: String
+			let price: String
+			let location: String
+			let imageUrl: String
+			let createdDate: String
+			let description: String
+			let email: String
+			let phoneNumber: String
+			let address: String
+		}
+
+		let product: Product
+	}
+
+	struct ViewModel {
+		struct ViewModelProduct {
+			let title: String
+			let price: String
+			let location: String
+			var image: UIImage
+			let createdDate: String
+			let description: String
+			let email: String
+			let phoneNumber: String
+		}
+
+		let viewModelProduct: ViewModelProduct
+	}
 }

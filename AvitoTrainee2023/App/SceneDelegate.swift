@@ -23,5 +23,20 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		self.window = window
 	}
+
+//	private func assembly() -> UIViewController {
+//		let mainViewController = MainPageAssembly().assembly()
+//		let detailsScreen = DetailsPageAssembly().assembly()
+//
+//		let router = MainPageRouter(
+//			viewController: mainViewController,
+//			detailsScreen: detailsScreen)
+//
+//		if let mainViewController = mainViewController as? MainPageViewController {
+//			mainViewController.router = router
+//		}
+//
+//		return mainViewController
+//	}
 }
 

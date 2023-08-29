@@ -16,8 +16,11 @@ final class MainPageAssembly: IAssembly {
 		let viewController = MainPageViewController()
 		let presenter = MainPagePresenter()
 		let interactor = MainPageInteractor(presenter: presenter)
+		let router = MainPageRouter()
 		viewController.interactor = interactor
+		viewController.router = router
 		presenter.viewController = viewController
+		router.viewController = viewController
 
 		return viewController
 	}

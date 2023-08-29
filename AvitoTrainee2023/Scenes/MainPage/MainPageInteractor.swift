@@ -9,7 +9,6 @@ import Foundation
 
 protocol IMainPageInteractor {
 	func viewIsReady()
-	func didProductSelected(at indexPath: IndexPath)
 }
 
 final class MainPageInteractor: IMainPageInteractor {
@@ -23,10 +22,6 @@ final class MainPageInteractor: IMainPageInteractor {
 		createResponce { responce in
 			self.presenter.present(responce: responce)
 		}
-	}
-
-	func didProductSelected(at indexPath: IndexPath) {
-
 	}
 
 	private func createResponce(completion: @escaping (MainPageModels.Responce) -> Void) {

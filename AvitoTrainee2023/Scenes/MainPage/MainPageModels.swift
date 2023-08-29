@@ -8,10 +8,6 @@
 import UIKit
 
 enum MainPageModels {
-	struct Request {
-		let id: String
-	}
-
 	struct Responce {
 		struct Product {
 			let id: String
@@ -27,6 +23,7 @@ enum MainPageModels {
 
 	struct ViewModel {
 		struct ViewModelProduct {
+			let id: String
 			let title: String
 			let price: String
 			let location: String
