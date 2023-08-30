@@ -19,8 +19,16 @@ final class MainPageInteractor: IMainPageInteractor {
 	}
 
 	func viewIsReady() {
-		createResponce { responce in
-			self.presenter.present(responce: responce)
+		NetworkMonitor.shared.startMonitoring { [weak self] isConnected in
+			if isConnected {
+				self?.createResponce { responce in
+					self?.presenter.present(responce: responce)
+				}
+			} else {
+				DispatchQueue.main.async {
+					self?.presenter.presentAlert()
+				}
+			}
 		}
 	}
 

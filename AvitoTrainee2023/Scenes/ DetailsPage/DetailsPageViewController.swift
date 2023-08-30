@@ -9,6 +9,7 @@ import SwiftUI
 
 protocol IDetailsPageViewController: AnyObject {
 	func render(viewModel: DetailsPageModels.ViewModel)
+	func showAlert()
 }
 
 class DetailsPageViewController: UIViewController {
@@ -16,6 +17,13 @@ class DetailsPageViewController: UIViewController {
 	var router: (IDetailsPageRouter & IDetailsPageDataPassing)?
 
 	private var viewData: DetailsPageModels.ViewModel?
+	private var activityIndicator: UIActivityIndicatorView?
+
+	private var refreshControl: UIRefreshControl {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+		return refreshControl
+	}
 
 	private lazy var titleLabel = makeTitleLabel()
 	private lazy var priceLabel = makePriceLabel()
@@ -45,7 +53,24 @@ extension DetailsPageViewController: IDetailsPageViewController {
 			self.descriptionLabel.text = viewModel.viewModelProduct.description
 			self.emailLabel.text = viewModel.viewModelProduct.email
 			self.phoneNumberLabel.text = viewModel.viewModelProduct.phoneNumber
+
+			self.activityIndicator?.stopAnimating()
 		}
+	}
+
+	func showAlert() {
+		let alert = UIAlertController(
+			title: "No internet connection",
+			message: "Please check your internet connection",
+			preferredStyle: .alert
+		)
+
+		let okAction = UIAlertAction(title: "OK", style: .default)
+
+		alert.addAction(okAction)
+		present(alert, animated: true)
+		
+		activityIndicator?.stopAnimating()
 	}
 }
 
@@ -158,5 +183,23 @@ private extension DetailsPageViewController {
 		navigationController?.navigationBar.tintColor = .black
 
 		setupConstraints()
+		activityIndicator = showSpinner(in: view)
 	}
+
+	func showSpinner(in view: UIView) -> UIActivityIndicatorView {
+		let activityIndicator = UIActivityIndicatorView(style: .large)
+		activityIndicator.color = .white
+		activityIndicator.startAnimating()
+		activityIndicator.center = view.center
+		activityIndicator.hidesWhenStopped = true
+
+		view.addSubview(activityIndicator)
+
+		return activityIndicator
+	}
+
+	@objc func refresh(sender: UIRefreshControl) {
+		interactor?.viewIsReady()
+		sender.endRefreshing()
+	 }
 }

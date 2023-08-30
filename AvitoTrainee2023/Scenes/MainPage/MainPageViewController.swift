@@ -9,6 +9,7 @@ import UIKit
 
 protocol IMainPageViewController: AnyObject {
 	func render(viewModel: MainPageModels.ViewModel)
+	func showAlert()
 }
 
 final class MainPageViewController: UIViewController {
@@ -16,11 +17,18 @@ final class MainPageViewController: UIViewController {
 	var router: IMainPageRouter?
 	
 	private var viewData: MainPageModels.ViewModel = .init(viewModelProducts: [])
+	private var activityIndicator: UIActivityIndicatorView?
+
+	private var refreshControl: UIRefreshControl {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+		return refreshControl
+	}
+
 	private lazy var collectionView = makeCollectionView()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		setup()
 		interactor?.viewIsReady()
 	}
@@ -31,7 +39,23 @@ extension MainPageViewController: IMainPageViewController {
 		self.viewData = viewModel
 		DispatchQueue.main.async {
 			self.collectionView.reloadData()
+			self.activityIndicator?.stopAnimating()
 		}
+	}
+
+	func showAlert() {
+		let alert = UIAlertController(
+			title: "No internet connection",
+			message: "Please check your internet connection",
+			preferredStyle: .alert
+		)
+
+		let okAction = UIAlertAction(title: "OK", style: .default)
+
+		alert.addAction(okAction)
+		present(alert, animated: true)
+
+		activityIndicator?.stopAnimating()
 	}
 }
 
@@ -112,22 +136,41 @@ private extension MainPageViewController {
 		collection.delegate = self
 
 		return collection
-
 	}
 
 	func setup() {
-		view.addSubview(collectionView)
 		collectionView.frame = view.bounds
+		collectionView.refreshControl = refreshControl
+
+		view.addSubview(collectionView)
 
 		navigationItem.title = "Avito"
 		navigationController?.navigationBar.barTintColor = .gray
 		navigationController?.navigationBar.prefersLargeTitles = true
 
 		setupCollectionView()
+		activityIndicator = showSpinner(in: view)
 	}
 
 	func setupCollectionView() {
 		collectionView.register(MainPageCell.self, forCellWithReuseIdentifier: "MainPageCell")
 	}
+
+	func showSpinner(in view: UIView) -> UIActivityIndicatorView {
+		let activityIndicator = UIActivityIndicatorView(style: .large)
+		activityIndicator.color = .white
+		activityIndicator.startAnimating()
+		activityIndicator.center = view.center
+		activityIndicator.hidesWhenStopped = true
+
+		view.addSubview(activityIndicator)
+
+		return activityIndicator
+	}
+
+	@objc func refresh(sender: UIRefreshControl) {
+		interactor?.viewIsReady()
+		sender.endRefreshing()
+	 }
 }
 

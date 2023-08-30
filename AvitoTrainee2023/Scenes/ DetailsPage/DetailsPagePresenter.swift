@@ -9,9 +9,12 @@ import UIKit
 
 protocol IDetailsPagePresenter {
 	func present(responce: DetailsPageModels.Responce)
+	func presentAlert()
 }
 
 final class DetailsPagePresenter: IDetailsPagePresenter {
+
+
 	weak var viewController: IDetailsPageViewController?
 
 	func present(responce: DetailsPageModels.Responce) {
@@ -32,7 +35,10 @@ final class DetailsPagePresenter: IDetailsPagePresenter {
 				print("Ошибка viewModelProduct")
 			}
 		}
+	}
 
+	func presentAlert() {
+		viewController?.showAlert()
 	}
 
 	private func mapDataProduct(

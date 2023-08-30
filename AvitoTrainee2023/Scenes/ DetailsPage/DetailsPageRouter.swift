@@ -6,9 +6,7 @@
 
 import UIKit
 
-protocol IDetailsPageRouter {
-
-}
+protocol IDetailsPageRouter {}
 
 protocol IDetailsPageDataPassing {
 	var dataStore: IDetailsPageStore? { get }

@@ -30,6 +30,7 @@
 		60A900452A9D16400042944B /* MainPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900442A9D16400042944B /* MainPageRouter.swift */; };
 		60A900472A9D1AC70042944B /* DetailsPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900462A9D1AC70042944B /* DetailsPageAssembly.swift */; };
 		60A9004B2A9E4BD60042944B /* PrdocutDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9004A2A9E4BD60042944B /* PrdocutDetails.swift */; };
+		60A9004D2A9FAE3C0042944B /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9004C2A9FAE3C0042944B /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		60A900442A9D16400042944B /* MainPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPageRouter.swift; path = AvitoTrainee2023/Scenes/MainPage/MainPageRouter.swift; sourceTree = SOURCE_ROOT; };
 		60A900462A9D1AC70042944B /* DetailsPageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageAssembly.swift; sourceTree = "<group>"; };
 		60A9004A2A9E4BD60042944B /* PrdocutDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrdocutDetails.swift; sourceTree = "<group>"; };
+		60A9004C2A9FAE3C0042944B /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		60A9FFFD2A9A08220042944B /* AvitoTrainee2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTrainee2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				60A9002C2A9A7C720042944B /* NetworkManager.swift */,
+				60A9004C2A9FAE3C0042944B /* NetworkMonitor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				60A9003C2A9BD4DE0042944B /* DetailsPagePresenter.swift in Sources */,
 				60A900222A9A6FA00042944B /* MainPagePresenter.swift in Sources */,
 				60A900422A9BD5210042944B /* DetailsPageViewController.swift in Sources */,
+				60A9004D2A9FAE3C0042944B /* NetworkMonitor.swift in Sources */,
 				60A900402A9BD4DE0042944B /* DetailsPageInteractor.swift in Sources */,
 				60A9004B2A9E4BD60042944B /* PrdocutDetails.swift in Sources */,
 				60A900162A9A08D70042944B /* MainPageViewController.swift in Sources */,

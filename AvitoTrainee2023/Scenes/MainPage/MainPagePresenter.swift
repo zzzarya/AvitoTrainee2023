@@ -9,6 +9,7 @@ import UIKit
 
 protocol IMainPagePresenter {
 	func present(responce: MainPageModels.Responce)
+	func presentAlert()
 }
 
 final class MainPagePresenter: IMainPagePresenter {
@@ -30,6 +31,10 @@ final class MainPagePresenter: IMainPagePresenter {
 			let result = MainPageModels.ViewModel(viewModelProducts: viewModelProducts)
 			self.viewController?.render(viewModel: result)
 		}
+	}
+
+	func presentAlert() {
+		viewController?.showAlert()
 	}
 
 	private func mapDataProduct(
