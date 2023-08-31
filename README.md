@@ -11,6 +11,10 @@
  - URLSession
  - OOP/POP
 
+### Зависимости:
+#### ### [Homebrew](https://brew.sh/):
+- [SwiftLint](https://github.com/realm/SwiftLint) - инструмент для обеспечения соблюдения стиля SWift
+
 ### Запуск приложения:
 1. Скачать репозиторий
 2. Открыть .xcodeproj файл
