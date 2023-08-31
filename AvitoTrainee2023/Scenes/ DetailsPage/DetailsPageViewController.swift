@@ -69,7 +69,7 @@ extension DetailsPageViewController: IDetailsPageViewController {
 
 		alert.addAction(okAction)
 		present(alert, animated: true)
-		
+
 		activityIndicator?.stopAnimating()
 	}
 }
@@ -159,7 +159,7 @@ private extension DetailsPageViewController {
 			emailLabel,
 			phoneNumberLabel,
 			createdDateLabel
-		].forEach{ vStack.addArrangedSubview($0) }
+		].forEach { vStack.addArrangedSubview($0) }
 
 		view.addSubview(imageView)
 		view.addSubview(vStack)

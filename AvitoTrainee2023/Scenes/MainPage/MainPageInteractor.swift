@@ -49,7 +49,7 @@ final class MainPageInteractor: IMainPageInteractor {
 	}
 
 	private func mapProductData(products: [Advertisements]) -> [MainPageModels.Responce.Product] {
-		products.map{ mapProductData(product: $0) }
+		products.map { mapProductData(product: $0) }
 	}
 
 	private func mapProductData(product: Advertisements) -> MainPageModels.Responce.Product {

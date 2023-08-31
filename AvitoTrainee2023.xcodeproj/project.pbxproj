@@ -22,7 +22,6 @@
 		60A9002D2A9A7C720042944B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9002C2A9A7C720042944B /* NetworkManager.swift */; };
 		60A9002F2A9B60350042944B /* MainPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9002E2A9B60350042944B /* MainPageAssembly.swift */; };
 		60A9003C2A9BD4DE0042944B /* DetailsPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900372A9BD4DE0042944B /* DetailsPagePresenter.swift */; };
-		60A9003D2A9BD4DE0042944B /* DetailsPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900382A9BD4DE0042944B /* DetailsPageWorker.swift */; };
 		60A9003E2A9BD4DE0042944B /* DetailsPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A900392A9BD4DE0042944B /* DetailsPageRouter.swift */; };
 		60A9003F2A9BD4DE0042944B /* DetailsPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9003A2A9BD4DE0042944B /* DetailsPageModels.swift */; };
 		60A900402A9BD4DE0042944B /* DetailsPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9003B2A9BD4DE0042944B /* DetailsPageInteractor.swift */; };
@@ -50,7 +49,6 @@
 		60A9002C2A9A7C720042944B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		60A9002E2A9B60350042944B /* MainPageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageAssembly.swift; sourceTree = "<group>"; };
 		60A900372A9BD4DE0042944B /* DetailsPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPagePresenter.swift; sourceTree = "<group>"; };
-		60A900382A9BD4DE0042944B /* DetailsPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageWorker.swift; sourceTree = "<group>"; };
 		60A900392A9BD4DE0042944B /* DetailsPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageRouter.swift; sourceTree = "<group>"; };
 		60A9003A2A9BD4DE0042944B /* DetailsPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageModels.swift; sourceTree = "<group>"; };
 		60A9003B2A9BD4DE0042944B /* DetailsPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageInteractor.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				60A900412A9BD5210042944B /* DetailsPageViewController.swift */,
 				60A9003B2A9BD4DE0042944B /* DetailsPageInteractor.swift */,
 				60A900372A9BD4DE0042944B /* DetailsPagePresenter.swift */,
-				60A900382A9BD4DE0042944B /* DetailsPageWorker.swift */,
 				60A900392A9BD4DE0042944B /* DetailsPageRouter.swift */,
 				60A900462A9D1AC70042944B /* DetailsPageAssembly.swift */,
 			);
@@ -266,7 +263,6 @@
 				60A9002D2A9A7C720042944B /* NetworkManager.swift in Sources */,
 				60A9001B2A9A66890042944B /* CellViewModel.swift in Sources */,
 				60A900202A9A6F8E0042944B /* MainPageInteractor.swift in Sources */,
-				60A9003D2A9BD4DE0042944B /* DetailsPageWorker.swift in Sources */,
 				60A900012A9A08220042944B /* AppDelegate.swift in Sources */,
 				60A9002F2A9B60350042944B /* MainPageAssembly.swift in Sources */,
 				60A9003E2A9BD4DE0042944B /* DetailsPageRouter.swift in Sources */,

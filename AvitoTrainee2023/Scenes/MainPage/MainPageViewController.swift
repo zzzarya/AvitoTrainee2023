@@ -93,7 +93,7 @@ extension MainPageViewController: UICollectionViewDelegateFlowLayout {
 		layout collectionViewLayout: UICollectionViewLayout,
 		sizeForItemAt indexPath: IndexPath
 	) -> CGSize {
-		let itemsPerRow : CGFloat = 2
+		let itemsPerRow: CGFloat = 2
 		let paddingWidth = 20 * (itemsPerRow + 1)
 		let availabelWidth = collectionView.frame.width - paddingWidth
 		let withPerItem = availabelWidth / itemsPerRow
@@ -173,4 +173,3 @@ private extension MainPageViewController {
 		sender.endRefreshing()
 	 }
 }
-
