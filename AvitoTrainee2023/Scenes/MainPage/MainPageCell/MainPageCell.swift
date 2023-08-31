@@ -53,12 +53,11 @@ private extension MainPageCell {
 			productPrice,
 			productLocation,
 			productCreatedDate
-		].forEach{ vStack.addArrangedSubview($0) }
+		].forEach { vStack.addArrangedSubview($0) }
 
 		contentView.addSubview(vStack)
 
 		vStack.frame = contentView.bounds
-		
 	}
 }
 

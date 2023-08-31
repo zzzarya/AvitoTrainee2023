@@ -15,9 +15,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 	) -> Bool {
 		return true
 	}
-	
-	// MARK: UISceneSession Lifecycle
 
+	// MARK: UISceneSession Lifecycle
 	func application(
 		_ application: UIApplication,
 		configurationForConnecting connectingSceneSession: UISceneSession,
@@ -26,4 +25,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
 	}
 }
-

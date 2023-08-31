@@ -4,7 +4,6 @@
 //
 //  Created by Антон Заричный on 27.08.2023.
 
-
 import UIKit
 
 protocol IDetailsPagePresenter {
@@ -13,7 +12,6 @@ protocol IDetailsPagePresenter {
 }
 
 final class DetailsPagePresenter: IDetailsPagePresenter {
-
 
 	weak var viewController: IDetailsPageViewController?
 

@@ -20,7 +20,9 @@ final class MainPagePresenter: IMainPagePresenter {
 		viewController?.render(viewModel: result)
 	}
 
-	private func mapDataProduct(products: [MainPageModels.Response.Product]) -> [MainPageModels.ViewModel.ViewModelProduct] {
+	private func mapDataProduct(
+		products: [MainPageModels.Response.Product]
+	) -> [MainPageModels.ViewModel.ViewModelProduct] {
 		var viewModelProducts = [MainPageModels.ViewModel.ViewModelProduct]()
 
 		let dispatchGroup = DispatchGroup() // Инициализация DispatchGroup
