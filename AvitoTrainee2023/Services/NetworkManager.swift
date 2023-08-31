@@ -48,11 +48,11 @@ final class NetworkManager {
 				let type = try decoder.decode(T.self, from: data)
 
 				completion(.success(type))
-
 			} catch {
 				completion(.failure(.decodingError))
 			}
-		}.resume()
+		}
+		.resume()
 	}
 
 	func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void ) {
