@@ -47,7 +47,8 @@ final class MainPagePresenter: IMainPagePresenter {
 			price: product.price,
 			location: product.location,
 			image: nil,
-			createdDate: product.createdDate)
+			createdDate: product.createdDate
+		)
 		
 		fetchProductImage(url: product.imageURL) { image in
 			if let image = image {

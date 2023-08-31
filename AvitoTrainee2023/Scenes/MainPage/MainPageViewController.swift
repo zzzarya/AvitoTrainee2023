@@ -72,7 +72,8 @@ extension MainPageViewController: UICollectionViewDataSource {
 			productName: product.title,
 			productPrice: product.price,
 			productLocation: product.location,
-			productCreatedDate: product.createdDate)
+			productCreatedDate: product.createdDate
+		)
 
 		return collectionView.dequeueReusableCell(withModel: model, for: indexPath)
 	}
@@ -81,7 +82,6 @@ extension MainPageViewController: UICollectionViewDataSource {
 extension MainPageViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		collectionView.deselectItem(at: indexPath, animated: true)
-		
 		let product = viewData.viewModelProducts[indexPath.row]
 		router?.navigateToDetails(id: product.id)
 	}
